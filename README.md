@@ -10,7 +10,11 @@ To open graphiql query editor,
 * `cd graphiql`
 * `open index.html`
 
-And Go to Town. Oh, example graphql queries,
+And Go to town. The graphql end is served at `localhost:3000` and dynamodb is exposed at `localhost:8000`
+
+Oh, example graphql queries,
+*Note* You can only run one query/mutation at a time, so comment out the others and press `CTR + ENTER` to run a query/mutation.
+
 ```graphql
 mutation CreateAuthors {
   jacob: createAuthor(author: {
