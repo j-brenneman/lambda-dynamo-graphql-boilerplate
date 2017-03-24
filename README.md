@@ -22,7 +22,7 @@ mutation CreateAuthors {
     id
     displayName
   }
-	derek: createAuthor(author: {
+derek: createAuthor(author: {
     firstName: "Derek",
     lastName: "Vance",
     age: 35,
