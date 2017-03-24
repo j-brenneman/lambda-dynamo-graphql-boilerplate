@@ -1,0 +1,30 @@
+{
+  "name": "demo-lambda-graphql",
+  "version": "1.0.0",
+  "description": "Lambda backend with graphql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": "asdfg",
+  "dependencies": {
+    "aws-sdk": "^2.29.0",
+    "dynamoose": "^0.7.0",
+    "graphql": "^0.9.1",
+    "graphql-tools": "^0.10.1",
+    "lodash": "^4.17.4",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "graphiql": "^0.9.3",
+    "serverless-babel-plugin": "^0.1.3",
+    "serverless-dynamodb-local": "^0.2.19",
+    "serverless-offline": "^3.10.3"
+  }
+}

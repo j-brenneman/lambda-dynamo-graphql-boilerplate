@@ -1,0 +1,40 @@
+service: serverless-graphql-apollo
+
+frameworkVersion: ">=1.5.0 <2.0.0"
+
+plugins:
+    - serverless-dynamodb-local
+    - serverless-offline
+
+custom:
+    serverless-offline:
+        babelOptions:
+            presets: ["babel-polyfill", "es2015"]
+
+provider:
+    name: aws
+    runtime: nodejs4.3
+    region: us-east-2
+    iamRoleStatements:
+        - Effect: Allow
+          Resource: "*"
+          Action:
+            - lambda: "*"
+
+functions:
+    api:
+        handler: handler.graphql
+        events:
+        - http:
+            path: graphql
+            method: post
+            cors: true
+            integration: lambda
+    models:
+        handler: handler.models
+        events:
+        - http:
+            path: models
+            method: post
+            cors: true
+            integration: lambda
