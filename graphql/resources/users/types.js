@@ -1,6 +1,6 @@
 'use strict';
 
-const types = `
+const types = /* GraphQL */`
     type Author {
         id: String!
         displayName: String
@@ -11,7 +11,15 @@ const types = `
         posts: [Post]
     }
 
-    input AuthorInput {
+    input AuthorCreateInput {
+        firstName: String!
+        lastName: String!
+        email: String!
+        age: Int
+    }
+
+    input AuthorEditInput {
+        id: ID!
         firstName: String!
         lastName: String!
         email: String!
@@ -25,6 +33,6 @@ const resolvers = {
             return [];
         }
     }
-}
+};
 
 export { types, resolvers };

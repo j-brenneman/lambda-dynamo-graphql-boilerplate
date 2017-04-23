@@ -1,6 +1,6 @@
 'use strict';
 
-const rootQuery = `
+const rootQuery = /* GraphQL */`
     type Query {
         # query to fetch authors
         authors(id: ID): [Author]

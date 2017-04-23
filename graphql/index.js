@@ -8,7 +8,7 @@ const graphqlHandler = (query, variables) => {
     const root = {};
     const context = { models };
 
-    return graphql(schema, query, root, context, variables)
+    return graphql(schema, query, root, context, variables);
 };
 
 export default graphqlHandler;

@@ -1,5 +1,6 @@
 import uuidV4 from 'uuid/v4';
 import dynamoose from 'dynamoose';
+import { get, head } from 'lodash';
 import { initializeConnection } from '../util/initialize';
 initializeConnection(dynamoose);
 
@@ -33,8 +34,25 @@ class Author {
             .then((authors, error) => error || authors);
     }
 
-    update() {
-        return;
+    update({ id, firstName, email, lastName, age }) {
+        const displayName = `${firstName} ${lastName}`;
+
+        return Model.update({ id, email }, {
+            displayName,
+            firstName,
+            lastName,
+            age
+        })
+        .then((author, error) => {
+            if (error) {
+                console.log('model error: ', error);
+                return error;
+            }
+
+            console.log('model author response', author);
+
+            return Object.assign({ id }, author);
+        });
     }
 
     delete() {

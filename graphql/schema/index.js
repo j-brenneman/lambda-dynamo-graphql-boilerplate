@@ -56,9 +56,9 @@ const typeDefs = concat([],
 );
 
 const schema = makeExecutableSchema({
-  typeDefs,
-  resolvers,
-  resolverValidationOptions: {
+    typeDefs,
+    resolvers,
+    resolverValidationOptions: {
         requireResolversForNonScalar: false
     }
 });

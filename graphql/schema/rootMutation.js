@@ -1,10 +1,14 @@
 'use strict';
 
-const rootMutation = `
+const rootMutation = /* GraphQL */`
     type Mutation {
         # create an author with an id and name
         createAuthor(
-            author: AuthorInput!
+            author: AuthorCreateInput!
+        ): Author
+
+        updateAuthor(
+            author: AuthorEditInput!
         ): Author
     }
 `;

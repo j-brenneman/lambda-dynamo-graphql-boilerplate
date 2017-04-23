@@ -6,9 +6,7 @@ const schema = new Schema({
         hashKey: true
     },
     displayName: {
-        type: String,
-        rangeKey: true,
-        index: true
+        type: String
     },
     firstName: {
         type: String
@@ -17,6 +15,8 @@ const schema = new Schema({
         type: String
     },
     email: {
+        rangeKey: true,
+        index: true,
         type: String
     },
     age: {

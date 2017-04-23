@@ -10,7 +10,7 @@ const runOperation = ({ model, operation, fields }) => {
     const modelInstance = new models[modelKeys[model]]();
     const dbOperation = modelInstance[operation];
 
-    return dbOperation(fields);
+    return dbOperation.call(modelInstance, fields);
 };
 
 export { modelKeys };
