@@ -23,6 +23,17 @@ const resolvers = {
             operation: 'update',
             fields: author
         });
+    },
+
+    deleteAuthor(root, args, context) {
+        const { Author } = context.models;
+        const { author } = args;
+
+        return models({
+            model: Author,
+            operation: 'delete',
+            fields: author
+        });
     }
 };
 

@@ -25,6 +25,11 @@ const types = /* GraphQL */`
         email: String!
         age: Int
     }
+
+    input AuthorDeleteInput {
+        id: ID!
+        email: String!
+    }
 `;
 
 const resolvers = {

@@ -1,6 +1,5 @@
 import uuidV4 from 'uuid/v4';
 import dynamoose from 'dynamoose';
-import { get, head } from 'lodash';
 import { initializeConnection } from '../util/initialize';
 initializeConnection(dynamoose);
 
@@ -43,20 +42,12 @@ class Author {
             lastName,
             age
         })
-        .then((author, error) => {
-            if (error) {
-                console.log('model error: ', error);
-                return error;
-            }
-
-            console.log('model author response', author);
-
-            return Object.assign({ id }, author);
-        });
+        .then((author, error) => error ? error : Object.assign({ id }, author));
     }
 
-    delete() {
-        return;
+    delete({ id, email }) {
+        return Model.delete({ id, email })
+            .then((author, error) => error ? error : { id: author.id });
     }
 }
 

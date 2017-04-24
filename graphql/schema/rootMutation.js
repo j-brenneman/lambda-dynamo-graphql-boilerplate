@@ -10,6 +10,10 @@ const rootMutation = /* GraphQL */`
         updateAuthor(
             author: AuthorEditInput!
         ): Author
+
+        deleteAuthor(
+            author: AuthorDeleteInput!
+        ): Author
     }
 `;
 
