@@ -5,15 +5,17 @@
 1. `npm install`
 2. `serverless offline start`
 3. In another tab, `serverless dynamodb start`
+4. To start dynamodb (Windows) `java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb`
 
 To open graphiql query editor,
 * `cd graphiql`
 * `open index.html`
 
-And Go to town. The graphql end is served at `localhost:3000` and dynamodb is exposed at `localhost:8000`
+And Go to town. The graphql end is served at `localhost:3000` and dynamodb is exposed at `localhost:8000`,
 
 Oh, example graphql queries,
 *Note* You can only run one query/mutation at a time, so comment out the others and press `CTR + ENTER` to run a query/mutation.
+
 
 ```graphql
 mutation CreateAuthors {
@@ -26,7 +28,7 @@ mutation CreateAuthors {
     id
     displayName
   }
-derek: createAuthor(author: {
+	derek: createAuthor(author: {
     firstName: "Derek",
     lastName: "Vance",
     age: 35,
